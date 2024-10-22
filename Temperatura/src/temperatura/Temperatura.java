@@ -52,11 +52,12 @@ public class Temperatura {
         
         System.out.println("Temperatura Leida en el termometro digital");
         tempTomada = scan.nextDouble();
-        
+        //Doble 
         if(tempTomada >37.5){
             //Ejecutar el Bloque Verdadero
             System.out.println("Tiene temperatura la persona!!");
-            
+            //Anidado
+            //Multiple
             if(tempTomada >= 42){
                 System.out.println("Urgencia...tiene que ser hospitalizado");
             }
