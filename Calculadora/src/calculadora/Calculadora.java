@@ -25,6 +25,7 @@ public class Calculadora {
         double num2 = 0;
         double resultado = 0;
         int opcion = 0;
+        
         /*
             if(condicion)
             donde la condicion puede ser 
