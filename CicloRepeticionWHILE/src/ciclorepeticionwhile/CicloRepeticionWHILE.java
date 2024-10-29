@@ -34,7 +34,7 @@ public class CicloRepeticionWHILE {
         */
         
         Scanner scan = new Scanner(System.in);
-       
+       /*
         double promedio = 0.0;
         int contadorNotas = 1;
         int nota = 0;
@@ -65,9 +65,8 @@ public class CicloRepeticionWHILE {
             System.out.println("Asignatura REPROBADA!!!");
         }
        
-        
-        
-    
+        */
+
     
     }//Fin Main
     
