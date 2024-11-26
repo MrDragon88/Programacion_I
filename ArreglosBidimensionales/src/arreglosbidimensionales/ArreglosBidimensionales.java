@@ -65,6 +65,23 @@ public class ArreglosBidimensionales {
             System.out.println("");
         }//Fin Fila
 
+        /*
+            1. Elabore un algoritmo para que un arreglo de tamaño 10,
+                se almacenen 10 numeros, luego se quiere mostrarlos en pantalla
+                pero presentando al reves.
+        
+        Ej: 
+            5   10  60  80  70  10  60  40  60  100
+            100 60  40  60  10  70  80  60  10  5
+            
+            2. Elaborar un algoritmo que permita agregar cualquier cantidad de 
+                marcas de vehículos en un arreglo dinamico, mostrar en pantalla aquel que 
+                yo desee, en la que se le indica el rango permitido de valores
+                al usuario.
+                
+        
+        
+        */
         
         /*
             Esquema para crear un arreglo bidimensional, con dimensiones
