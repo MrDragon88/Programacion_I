@@ -72,7 +72,7 @@ public class ConteoNumeros {
             if(cantidadNumeroxFila == 10){
                 System.out.println("");
                 cantidadNumeroxFila = 0;
-            }
+            }//Fin If
         }//Fin While
         
     }//Fin de Main
