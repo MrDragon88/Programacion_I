@@ -112,6 +112,18 @@ public class ConteoPersonas {
             System.out.printf("\nMujeres: %d",conteoMujeres);
             System.out.printf("\nRosas: %d",conteoRosas);
             System.out.printf("\nChocolates: %d",conteoChocolates);
+            
+            System.out.printf("Aqui este texto %d"+conteoVarones,conteoMujeres);
+            /*
+                %d
+                %f
+                %s
+                %c
+                %b
+            */
+            
+            
+            
     }//Fin Main
     
 }//Fin Class
