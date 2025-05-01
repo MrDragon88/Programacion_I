@@ -60,6 +60,22 @@ public class OperacionesGenerales {
         System.out.printf("\nLa multiplicacion es: %.1f",multiTotal);
         System.out.printf("\nLa division es: %.3f",divisionTotal);
         System.out.printf("\nEl modulo es: %d",modulo);//Imprimir numeros enteros
+        
+        System.out.println("");
+        System.out.println("Valor de Almacenado en Incremento: "+incrementos);
+        System.out.println("Incremente en 5 de manera abreviada");
+        
+        incrementos +=5;// incrementos = incrementos + 5;
+        System.out.println("Nuevo valor almacenado en Incrementos: "+incrementos);
+        incrementos *=2 ;
+        System.out.println("Nuevo valor almacenado en Incrementos: "+incrementos);
+        
+        System.out.println("Incremento de manera Unitaria (1 a 1)");
+        incrementos++;//PostIncremento
+        //++incrementos;//PreIncremento
+        System.out.println("Nuevo Valor de Incrementos: "+incrementos);
+        
+        
     }//Fin de Main
     
 }//Fin de Class
