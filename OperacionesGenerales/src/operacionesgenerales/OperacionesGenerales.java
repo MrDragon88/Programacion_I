@@ -50,11 +50,16 @@ public class OperacionesGenerales {
         sumaTotal = num1 + num2 + num3;
         restaTotal = num1 - (num3 + num2);//1ro Parentesis, 2do Multi/Div, 3ro Sum/Res
         multiTotal = num1 * num4;
-        divisionTotal = num2/num4;
+        divisionTotal = num2 / num4;
+        
+        //(int) -> Proceso denominado CASTING, temporalmente creando una variable
+        modulo = num2 % (int)num4; // Simbolo % (modulo)-> Resultado del Residuo
+                
         System.out.printf("La suma total es: %f",sumaTotal);
         System.out.printf("\nLa Resta es :%.2f",restaTotal);
         System.out.printf("\nLa multiplicacion es: %.1f",multiTotal);
         System.out.printf("\nLa division es: %.3f",divisionTotal);
+        System.out.printf("\nEl modulo es: %d",modulo);//Imprimir numeros enteros
     }//Fin de Main
     
 }//Fin de Class
