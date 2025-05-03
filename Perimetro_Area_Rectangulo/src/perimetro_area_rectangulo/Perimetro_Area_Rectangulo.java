@@ -6,6 +6,7 @@ package perimetro_area_rectangulo;
 
 import java.util.Scanner;
 
+
 /**
  *
  * @author Oscar Andrade
@@ -47,10 +48,10 @@ public class Perimetro_Area_Rectangulo {
         int area = 0;
 
         //Ingreso de Datos
-        System.out.println("Ingrese el valor de la altura: ");
+        System.out.print("Ingrese el valor de la altura: ");
         altura = scan.nextInt();
         
-        System.out.println("Ingrese el valor de la base: ");
+        System.out.print("Ingrese el valor de la base: ");
         base = scan.nextInt();
         
         //Calculo de Area
@@ -60,8 +61,8 @@ public class Perimetro_Area_Rectangulo {
         perimetro = (2*base) + (2*altura);
         
         //Mostrar Resultados
-        System.out.printf("El area del rectangulo es: %d",area);
-        System.out.printf("El perimetro del rectangulo es: %d",perimetro);
+        System.out.printf("\nEl area del rectangulo es: %d",area);
+        System.out.printf("\nEl perimetro del rectangulo es: %d",perimetro);
         
         
         
