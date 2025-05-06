@@ -59,6 +59,16 @@ public class PromedioPeriodo {
         int examI = 0;
         int notaFinalI = 0;
         
+        int acumII = 0;
+        int examII = 0;
+        int notaFinalII = 0;
+        
+        int acumIII = 0;
+        int examIII = 0;
+        int notaFinalIII = 0;
+        
+        double promedioPeriodo = 0;
+        
         System.out.print("Clase 1 ->Acumulativo: ");
         acumI = scan.nextInt();
         
@@ -75,16 +85,56 @@ public class PromedioPeriodo {
             System.out.println("Examen no puede ser mas de 50");
             examI = 0;
         }
+//-----------------------------------------------------------------------------
+        System.out.print("Clase 2 ->Acumulativo: ");
+        acumII = scan.nextInt();
+        
+        //Estructura de Seleccion Simple        
+        if(acumII >50){
+            System.out.println("Acumulativo no puede ser mas de 50");
+            acumII = 50;
+        }
+        
+        System.out.print("Clase 2 ->Examen: ");
+        examII = scan.nextInt();
+        //Estructura de Seleccion Simple
+        if(examII >50){
+            System.out.println("Examen no puede ser mas de 50");
+            examII = 0;
+        }
+//--------------------------------------------------------------------------------
+        System.out.print("Clase 3 ->Acumulativo: ");
+        acumIII = scan.nextInt();
+        
+        //Estructura de Seleccion Simple        
+        if(acumIII >50){
+            System.out.println("Acumulativo no puede ser mas de 50");
+            acumIII = 50;
+        }
+        
+        System.out.print("Clase 3 ->Examen: ");
+        examIII = scan.nextInt();
+        //Estructura de Seleccion Simple
+        if(examIII >50){
+            System.out.println("Examen no puede ser mas de 50");
+            examIII = 0;
+        }
+//-----------------------------------------------------------------------------
+        //Calculo de Notas
         notaFinalI = acumI + examI;
+        notaFinalII = acumII + examII;
+        notaFinalIII = acumIII + examIII;
         
-        System.out.printf("Clase 1 ->Nota Final: %d",notaFinalI);
+        System.out.printf("Clase 1 ->Nota Final: %d\t",notaFinalI);
+        //Estructura de Seleccion DOBLE
         
-           if(notaFinalI >= 70){
+        if(notaFinalI >= 70){
             System.out.println("Aprobado!!!!");
-        }else
+        }
+        else
         {
             System.out.println("Reprobado!!!!!");
-        } //Estructura de Seleccion DOBLE
+        }
     
         /*
         OPCION 2
@@ -95,6 +145,29 @@ public class PromedioPeriodo {
             System.out.println("Aprobado!!!!!");
         }
         */
+        
+        System.out.printf("Clase 2 ->Nota Final: %d\t",notaFinalII);
+        //Estructura de Seleccion DOBLE
+        
+        if(notaFinalII >= 70){
+            System.out.println("Aprobado!!!!");
+        }
+        else
+        {
+            System.out.println("Reprobado!!!!!");
+        }
+        
+        
+        System.out.printf("Clase 3 ->Nota Final: %d\t",notaFinalIII);
+        //Estructura de Seleccion DOBLE
+        
+        if(notaFinalIII >= 70){
+            System.out.println("Aprobado!!!!");
+        }
+        else
+        {
+            System.out.println("Reprobado!!!!!");
+        }
         
     }//Fin Main
     
