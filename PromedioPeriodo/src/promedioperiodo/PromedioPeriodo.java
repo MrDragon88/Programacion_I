@@ -125,6 +125,8 @@ public class PromedioPeriodo {
         notaFinalII = acumII + examII;
         notaFinalIII = acumIII + examIII;
         
+        promedioPeriodo = (notaFinalI + notaFinalII + notaFinalIII)/3; 
+        
         System.out.printf("Clase 1 ->Nota Final: %d\t",notaFinalI);
         //Estructura de Seleccion DOBLE
         
@@ -169,6 +171,20 @@ public class PromedioPeriodo {
             System.out.println("Reprobado!!!!!");
         }
         
+        System.out.printf("El promedio del periodo fue: %.2f",promedioPeriodo);
+        if(promedioPeriodo >=95){
+            System.out.println("Summa Cum Laude");
+        }
+        else if(promedioPeriodo >=90){
+            System.out.println("Magna Cum Laude");
+        }
+        else if(promedioPeriodo >=85){
+            System.out.println("Cum Laude");
+        }
+        else
+        {
+            System.out.println("Tenes mas de 70");
+        }
     }//Fin Main
     
 }//Fin Class
