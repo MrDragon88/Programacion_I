@@ -23,37 +23,81 @@ public class Salida_Cine {
             de pelicula que me gustaria visualizar.
         */
         Scanner scan = new Scanner(System.in);
-        char opcion = '@';//Caracter; letras, digitos, caracteres  especiales
+        char opcion = '@';
+        int presupuesto = 0;
         
-        System.out.println("Bienvenido al Cine de Programacion");
-        System.out.println("1. Accion");
-        System.out.println("2. Hechos Reales");
-        System.out.println("3. Terror");
-        System.out.print("Cual es tu eleccion: ");
-        opcion = scan.next().charAt(0);
+        System.out.print("Cuanto presupuesto tiene? ");
+        presupuesto = scan.nextInt();
         
-       //Caso -> numeros enteros, caracteres o palabras
-        switch(opcion){
-            case '1':
-                System.out.println("Accion");
-               break;
+        if (presupuesto < 300){
+           System.out.println("Bienvenido al cine de programacion ");
+           System.out.println("1. Accion ");
+           System.out.println("2. Hechos reales ");
+           System.out.println("3. Terror ");
+           System.out.println("Cual es tu eleccion: ");
+           opcion = scan.next().charAt(0);
             
-            case '2':
-                System.out.println("Hechos Reales");
-               break;   
-            
-            case '3':
-                System.out.println("Terror");
-               break;
-               
-            default:
-                System.out.println("Romanticas!!");
-                break;
- 
-        }//Fin Switch
-       
+        //Caso -> numero enteros, caracteres o palabras
         
+            switch(opcion) {
+              case '1': 
+                  System.out.println("Accion");
+                  if (presupuesto > 100){
+                      System.out.println("Tienes un muñeco de accion ");
+                      
+                  }
+                      
+                  break; 
+
+              case '2':               
+                  System.out.println("Hechos reales");
+                  if (presupuesto > 250){
+                      System.out.println("\"Puede tener una visita tras bambalinas\" ");
+                      
+                  }
+                  break;   
+
+              case '3':  
+                  System.out.println("Terror");
+                  break;
+
+              default:  
+                  System.out.println("Romanticas!!");
+                  break;   
+
+          }//Fin Switch 
+        }//Fin de If
+        else {
+           System.out.println("Bienvenido al cine de programacion ");
+           System.out.println("1. Ciencia Ficcion ");
+           System.out.println("2. Accion ");
+           System.out.println("3. Comedia ");
+           System.out.println("Cual es tu eleccion: ");
+           opcion = scan.next().charAt(0);
+           
+            switch(opcion) {
+              case '1': 
+                  System.out.println("Ciencia Ficcion");
+                  if (presupuesto > 600)
+                      System.out.println("Te llevas una replica de la nave ");
+                  break; 
+
+              case '2':               
+                  System.out.println("Accion");
+                  break;   
+
+              case '3':  
+                  System.out.println("Comedia");
+                  
+                  break;
+
+              default:  
+                  System.out.println("Quedate en casa!!");
+                  break;   
+
+          }//Fin Switch 
+        }
         
     }//Fin Main
     
-}//Fin de Class
+}//Fin Class
