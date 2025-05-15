@@ -4,6 +4,7 @@
  */
 package ingresonumeros;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -40,18 +41,33 @@ public class IngresoNumeros {
             - Centinela ->cuenta de manera "INFINITO"
             
             *While
-
+                Evalua la condicion primero para determinar si se ejecuta o no.
             *Do ... While
+                Ejecuta al menos 1 vez antes de evaluar la condicion y determinar
+                si se continua o no.
             
         */
         
         Scanner input = new Scanner(System.in);
+        Random rd = new Random();
         int numeroIngresado = 0;
         int conteoNumero = 1;
+        int totalGrupoA = 0;
+        int totalGrupoB = 0;
+        int totalGrupoC = 0;
         
         while(conteoNumero <= 10){
-            System.out.printf("\nIngresar numero %d: ",conteoNumero);
-            numeroIngresado = input.nextInt();
+            
+            do{
+                //System.out.printf("\nIngresar numero %d: ",conteoNumero);
+                //numeroIngresado = input.nextInt();
+                
+                numeroIngresado = rd.nextInt(11,21);//11-20
+                System.out.printf("\nIngresar numero %d: %d",conteoNumero,numeroIngresado);
+                
+            }while(numeroIngresado<11 || numeroIngresado>20);
+            
+            
             
             //Operacion Booleana AND - OR - NOT
             //AND -> "Y" = multiplicacion -simbolo &&(ampersand)
@@ -65,19 +81,25 @@ public class IngresoNumeros {
                 
             if(numeroIngresado>=11 && numeroIngresado <=13){
                 System.out.println("Grupo A");
+                totalGrupoA++;
             }
             else if(numeroIngresado>=14 && numeroIngresado <=16){
                 System.out.println("Grupo B");
+                totalGrupoB++;
             }
             else if(numeroIngresado>=17 && numeroIngresado <=20){
                 System.out.println("Grupo C");
+                totalGrupoC++;
             }
             else{
                 System.out.println("Numero No valido...tiene que ser entre 11 y 20");
             }
             conteoNumero++;//Contando de 1 en 1
         }//Fin de While
-        
+        System.out.println("---------------------------");
+        System.out.printf("Total Numeros Grupo A: %d",totalGrupoA);
+        System.out.printf("\nTotal Numeros Grupo B: %d",totalGrupoB);
+        System.out.printf("\nTotal Numeros Grupo C: %d",totalGrupoC);
         
         
    
