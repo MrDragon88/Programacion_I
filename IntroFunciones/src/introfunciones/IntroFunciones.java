@@ -18,14 +18,14 @@ public class IntroFunciones {
     
     public static void main(String[] args) {
         // TODO code application logic here
-            Scanner scan  = new Scanner(System.in);
             
+            Scanner sc  = new Scanner(System.in);
             int acumI = 0;
             int acumII = 0;
             int examenI = 0;
             int examenII = 0;
             double notaFinal = 0;
-            
+            /*
             do{
                 System.out.print("Ingrese la nota del Acum del I Parcial (0 - 30): ");
                 acumI = scan.nextInt();
@@ -36,7 +36,7 @@ public class IntroFunciones {
                 }
             }while(acumI < 0 || acumI>30);
             System.out.println("");
-            
+                        
             do{
                 System.out.print("Ingrese la nota del Acum del II Parcial (0 - 30): ");
                 acumII = scan.nextInt();
@@ -68,12 +68,47 @@ public class IntroFunciones {
                     System.out.println("Ingrese nuevamente la nota.!!");
                 }
             }while(examenII < 0 || examenII>20);
+            */
+            System.out.print("Ingrese la nota del Acum del I Parcial (0 - 30): ");
+            acumI = sc.nextInt();
+            acumI = ValidarNota(acumI);
+            
+            System.out.print("Ingrese la nota del Acum del II Parcial (0 - 30): ");
+            acumII = sc.nextInt();
+            acumII = ValidarNota(acumII);
+            
+            System.out.print("Ingrese la nota del Examen del I Parcial (0 - 20): ");
+            examenI = sc.nextInt();
+            examenI = ValidarNota(examenI);
+            
+            System.out.print("Ingrese la nota del Examen del II Parcial (0 - 20): ");
+            examenII = sc.nextInt();
+            examenII = ValidarNota(examenII);
+            
             
             notaFinal = acumI + acumII + examenI + examenII;
             
             System.out.println("Su promedio es: "+notaFinal);
  
     }//Fin Main
+    
+    static public int ValidarNota(int notaIngresada){
+        Scanner scan  = new Scanner(System.in);
+
+        int notaValidada = 0;        
+        do {
+            if (notaIngresada < 0 || notaIngresada > 30) {
+                System.out.println("Nota no valida...tiene que ser entre 0  y 30");
+                
+                System.out.print("Ingrese la nota Nuevamente: ");
+                notaIngresada = scan.nextInt();
+            }
+        } while (notaIngresada < 0 || notaIngresada > 30);
+        notaValidada = notaIngresada;
+        System.out.println("");
+        
+        return notaValidada;
+    }//Fin Funcion Validar Nota
     
     /*
         Una función/método está construido por 4 partes
