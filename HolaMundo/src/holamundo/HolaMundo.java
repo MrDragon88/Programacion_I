@@ -4,6 +4,8 @@
  */
 package holamundo;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Oscar Andrade
@@ -55,6 +57,52 @@ public class HolaMundo {
         char caracteres='@'; //letras, digitos, simbolos especiales
         String palabras="John Doe"; //cadena de caracteres
         
+        Scanner scan = new Scanner(System.in);
+        
+        int edadPersona = 100;
+        double pesoKG = 0.0;
+        String nombrePersona = "default";
+        char genero ='#';
+        
+        System.out.println("Dime tu edad: ");
+        edadPersona = scan.nextInt();//Capturando un Entero
+        
+        System.out.println("Cuanto pesas?");
+        pesoKG = scan.nextDouble();//Capturando un Decimal
+        
+        scan.nextLine();
+        System.out.println("Como te llamas: ");
+        nombrePersona = scan.nextLine();//Captura una cadena
+        
+        System.out.println("Tu genero es: ");
+        genero = scan.next().charAt(0);//Capturando una cadena
+        
+        System.out.println("Tu nombres es: " + nombrePersona);
+        System.out.println("Cuya edad gatuna es: " + edadPersona);
+        System.out.println("Tu peso saturino anda por "+pesoKG);
+        System.out.println("Genero Terricola: "+genero);
+        
+        //Operaciones Aritmeticas
+        int num1 = 175;
+        int num2 = 200;
+        int opSuma = 0;     // Simbolo +
+        int opResta = 0;    // Simbolo -
+        int opMul = 0;      // Simbolo *
+        int opDIV = 0;      // Simbolo /
+        int opMOD = 0;      // Simbolo % (porcentaje)
+        
+        opSuma = num1 + num2;
+        opResta = num1 - num2;
+        opMul = num1 * num2;
+        opDIV = num2 / num1;
+        opMOD = num2 % num1;
+        
+        System.out.println("\nResultados de Operaciones\n");
+        System.out.printf("\nSuma es %d",opSuma);
+        System.out.printf("\nResta es %d",opResta);
+        System.out.printf("\n%d la multiplicacion es ",opMul);
+        System.out.printf("\n%d entre %d es %d",num2,num1,opDIV);
+        System.out.printf("\n%d MOD %d es %d",num2,num1,opMOD);
     }//Fin de Main
     
 }//Fin Class
