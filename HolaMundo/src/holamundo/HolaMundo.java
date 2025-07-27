@@ -82,6 +82,40 @@ public class HolaMundo {
         System.out.println("Un peso corporal "+pesoKG);
         System.out.println("Genero: "+sexo);
         
+        
+        //Operaciones Aritmeticas
+        /*
+            Suma => + 
+            * El simbolo + se puede usar para operacoines
+                aritmeticas o para concatenar cadena
+        
+            Resta => -
+            Multiplicacion => *
+            Division => /
+            Modulo => % (Residuo entero de una division)
+        */
+        
+        int num1 = 175;
+        int num2 = 200;
+        int opSuma = 0;
+        int opResta = 0;
+        int opMul = 0;
+        int opDiv = 0;
+        int opModulo = 0;
+        
+        opSuma = num2 + num1;
+        opResta = num2 - num1;
+        opMul = num2 * num1;
+        opDiv = num2 / num1;
+        opModulo = num2 % num1;
+        //Printf es una impresion FORMATEADA
+        System.out.println("\nResultados Operaciones");
+        System.out.printf("\nSuma es: %d",opSuma);
+        System.out.printf("\nResta es: %d",opResta);
+        System.out.printf("\n%d, Resultado de Multi",opMul);
+        System.out.printf("\nLa DIV entre %d y %d es: %d",num2,num1,opDiv);
+        System.out.printf("\nEl MOD entre %d y %d es: %d",num2,num1,opModulo);
+        
     }//Fin de Main
     
 }//Fin de Class
