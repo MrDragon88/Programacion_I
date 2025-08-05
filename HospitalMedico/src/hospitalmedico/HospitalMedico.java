@@ -57,6 +57,7 @@ public class HospitalMedico {
         */
         char opcion1 = '#';
         int opcion2 = 0;
+        String opcion3 = "John";
         double montoDonado = 0;
         double resultado = 0;
         String nombreDepa="John Doe";
@@ -75,7 +76,9 @@ public class HospitalMedico {
         System.out.println("3. Traumatologia");
         System.out.println("4. Psiquiatria");
         System.out.print("Cual es tu opcion seleccionada: ");
-        opcion1 = doc.next().toUpperCase().charAt(0);
+        //opcion1 = doc.next().toUpperCase().charAt(0);
+        opcion2 = doc.nextInt();
+        //opcion3 = doc.next().toUpperCase();
         
         /*
             Condicion
@@ -83,20 +86,20 @@ public class HospitalMedico {
             b. Numero Entero
             c. Cadenas
         */
-        switch(opcion1){
-            case '1':
+        switch(opcion2){
+            case 1:
                 resultado = montoDonado * 0.45;
                 nombreDepa = "Urgencias";
                 break;//Interrupcion
-            case '2':
+            case 2:
                 resultado = montoDonado * 0.30;
                 nombreDepa = "Pediatria";
                 break;
-            case '3':
+            case 3:
                 resultado = montoDonado * 0.15;
                nombreDepa = "Traumatologia";
                 break;
-            case '4':
+            case 4:
                 resultado = montoDonado * 0.10;
                 nombreDepa = "Psiquiatria";
                 break;
@@ -107,7 +110,7 @@ public class HospitalMedico {
                 break;
         }//Fin de Switch
         System.out.printf("Le corresponde: %.2f al departamento"
-                + "de %s",resultado,nombreDepa);
+                + "de %S",resultado,nombreDepa);
     }//Fin de Main
     
 }//Fin de Class
