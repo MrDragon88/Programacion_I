@@ -67,10 +67,9 @@ public class Notas {
            
             System.out.printf("Estudiante %d:",numEstudiantes+1);
             System.out.println("");
-            numEstudiantes++;//Sumando de 1 en 1
-        }//Fin de While
-        
-        //Instrucciones a Repetir
+            
+            
+            //Instrucciones a Repetir
               System.out.print("Nota 1: ");
               notaExamen1 = input.nextInt();
 
@@ -86,6 +85,11 @@ public class Notas {
                                       notaExamen3
                                     )/3;
               System.out.printf("Promedio: %3.2f",promedioEstudiante);
+              
+              numEstudiantes++;//Sumando de 1 en 1
+        }//Fin de While
+        
+        
         
         
         /*
