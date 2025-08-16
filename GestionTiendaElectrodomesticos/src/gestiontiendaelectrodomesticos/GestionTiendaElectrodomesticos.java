@@ -4,6 +4,8 @@
  */
 package gestiontiendaelectrodomesticos;
 
+import java.util.Scanner;
+
 /**
  *
  * 
@@ -34,7 +36,12 @@ package gestiontiendaelectrodomesticos;
 
     Usando un ciclo while con un contador descendente, debe pedir el 
     precio de cada producto y calcular el total de ventas de la tarde.
+    si la venta del producto es arriba de 100, decir que esta caro, sino
+    que esta barato
 
+* 
+* 
+* 
     3. Ventas de la noche (bucle centinela):
 
     El programa debe comenzar a pedir los precios de los productos vendidos
@@ -63,6 +70,28 @@ public class GestionTiendaElectrodomesticos {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    }
+        
+        Scanner scan = new Scanner(System.in);
+        
+        int numVentas = 0;
+        double precioVenta = 0;
+        double ventaTotalMan = 0;
+        int contador = 1;
+        
+        //Venta de la Maniana
+        System.out.println("Ventas de la Maniana");
+        System.out.printf("Cuanto vendiste? ");
+        numVentas = scan.nextInt();
+        
+        while(contador<=numVentas){
+            System.out.printf("Cuento  te salio en venta producto"
+                    + " #%d: ",contador);
+            precioVenta = scan.nextDouble();
+            ventaTotalMan += precioVenta;
+            //ventaTotalMan = precioVenta + ventaTotalMan;
+            contador++;
+        }//Fin de While Ascendente
+        System.out.printf("La venta total de la maniana fue: %.2f",ventaTotalMan);
+    }//Fin de Main
     
-}
+}//Fin de Class
