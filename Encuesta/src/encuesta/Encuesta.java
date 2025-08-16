@@ -76,15 +76,15 @@ public class Encuesta {
         
         String comentario = "John Doe";
         String centinela = "FIN";
-        int contadorComentario = 1;
+        int contadorComentario = 0;
         
         
         System.out.print("Cuantas personas se entrevistaron: ");
         totalPersonasEntre = scan.nextInt();
         System.out.println("Dime las edades de cada uno");
         while(numPersonas<=totalPersonasEntre){
-            System.out.printf("%nPersona Entrevistada No. %d",numPersonas);
-            System.out.printf("Edad: ");
+            System.out.printf("Persona Entrevistada No. %d",numPersonas);
+            System.out.printf("\tEdad: ");
             edad= scan.nextInt();
             sumaEdades +=edad;
             numPersonas++;
@@ -92,6 +92,7 @@ public class Encuesta {
         promedio = sumaEdades / totalPersonasEntre;
         System.out.printf("Promedio de Edad es: %.2f",promedio);
         
+        System.out.println("\n");
         System.out.println("*********");
         System.out.println("Seccion 2");
         System.out.println("*********");
@@ -99,7 +100,7 @@ public class Encuesta {
         System.out.println("Cuantos comentarios se hicieron? ");
         totalComentario = scan.nextInt();
         while(totalComentario>0){
-            System.out.printf("%n Satisfacion Producto #%d:",totalComentario);
+            System.out.printf("Satisfacion Producto #%d:",totalComentario);
             puntaje = scan.nextInt();
             if(puntaje>=1 && puntaje<=10){
                 totalPuntaje +=puntaje;
@@ -110,18 +111,20 @@ public class Encuesta {
         }//Fin While DESCEDENTE
         System.out.printf("%nPuntaje Total es: %d",totalPuntaje);
         scan.nextLine();
+        
         System.out.println("\n");
         System.out.println("*********");
         System.out.println("Seccion 3");
         System.out.println("*********");
         while(!centinela.equals(comentario)){
-            System.out.printf("Dime tu comentario # %d: ",contadorComentario);
+            System.out.printf("Dime tu comentario # %d: ",contadorComentario+1);
             comentario = scan.nextLine().toUpperCase();
             if(!comentario.equals(centinela)){
                 contadorComentario++;
             }   
         }//Fin de While Centinela
         System.out.printf("# de Comentarios %d",contadorComentario);
+        System.out.println("");
     }//Fin de Main
     
 }//Fin de Class
