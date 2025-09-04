@@ -17,15 +17,16 @@ public class TiendaCafe {
      * 
      *  El estudiante debe resolver este problema utilizando los siguientes métodos:
 
-        Un método para mostrar un saludo de bienvenida. Sin parametros, sin devolucion
+        1. Un método para mostrar un saludo de bienvenida. Sin parametros, sin devolucion
 
-        Un método para mostrar el menú del café con los precios. Sin parametros, sin devolucion
+        2. Un método para mostrar el menú del café con los precios. Sin parametros, sin devolucion
 
-        Un método que calcule el costo total de la compra. Con tres parametros, con devolucion
+        3. Un método que calcule el costo total de la compra. Con tres parametros, con devolucion
 
-        Un método que aplique un descuento del 10% si el total supera $20. Con un parametro, con devolucion
+        4. Un método que aplique un descuento del 10% si el total supera $20. 
+        * Con un parametro, con devolucion
 
-        Un método que imprima el recibo final. Con un parametro, sin devolucion
+        5.Un método que imprima el recibo final. Con un parametro, sin devolucion
      */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -41,27 +42,15 @@ public class TiendaCafe {
         double totalConDescuento = 0;
 
         // 1. Saludo de bienvenida
-        System.out.println("¡Bienvenido a la Cafetería Java!");
-        System.out.println("---------------------------------");
+        Saludo();
 
         // 2. Mostrar el menú
-        System.out.println("Nuestro menú:");
-        System.out.println("Café: $3.50");
-        System.out.println("Pastel: $4.00");
-        System.out.println("Té: $2.50");
-        System.out.println("---------------------------------");
+        Menu();
 
         // 3. Cálculo del total
-        
-
-        subtotal = (cantidadCafe * precioCafe) + (cantidadPastel * precioPastel) + (cantidadTe * precioTe);
-
+            subtotal = calculoSubtotal(cantidadCafe, cantidadPastel, cantidadTe);
         // 4. Aplicar descuento (lógica de negocio)
-         totalConDescuento = subtotal; // Inicializamos el total con el subtotal
-        if (subtotal > 20.0) {
-            totalConDescuento = subtotal * 0.90; // Aplicamos el 10% de descuento
-            System.out.println("¡Felicitaciones! Se ha aplicado un descuento del 10%.");
-        }
+         totalConDescuento = Total(subtotal);
 
         // 5. Imprimir el recibo final
         System.out.println("---------------------------------");
@@ -71,9 +60,41 @@ public class TiendaCafe {
         System.out.println("Té: " + cantidadTe + " x $" + precioTe);
         System.out.println("---------------------------------");
         System.out.println("Subtotal: $" + String.format("%.2f", subtotal));
-        System.out.println("Total a pagar: $" + String.format("%.2f", totalConDescuento));
-        System.out.println("---------------------------------");
+        ImpresionRecibo(totalConDescuento);
     }//Fin Main
-
+    
+    public static void Saludo(){
+        System.out.println("¡Bienvenido a la Cafetería Java!");
+        System.out.println("---------------------------------");
+    }//Fin Funcion Saludo
+    
+    public static void Menu(){
+        System.out.println("Nuestro menú:");
+        System.out.println("Café: $3.50");
+        System.out.println("Pastel: $4.00");
+        System.out.println("Té: $2.50");
+        System.out.println("---------------------------------");
+    }//Fin Funcion Menu
+    
+    public static double calculoSubtotal(int cantCafe,int cantPastel,int cantTe){
+        double tempSubTotal = 0;
+        tempSubTotal = (cantCafe * 3.5) + (cantPastel * 4) + (cantTe * 2.5);
+        return tempSubTotal;
+    }//Fin Funcion calculoSubtotal
+    
+    public static double Total(double subTotal){
+        double tempTotal = subTotal; // Inicializamos el total con el subtotal
+        if (tempTotal > 20.0) {
+            tempTotal = subTotal * 0.90; // Aplicamos el 10% de descuento
+            System.out.println("¡Felicitaciones! Se ha aplicado un descuento del 10%.");
+        }
+        
+        return tempTotal;
+    }//Fin Funcion
+    
+    public static void ImpresionRecibo(double total){
+        System.out.println("Total a pagar: $" + String.format("%.2f", total));
+        System.out.println("---------------------------------");
+    }
     
 }//Fin Class
