@@ -4,17 +4,40 @@
  */
 package javadocs;
 
-
+/**
+ * 
+ * Este es un ejemplo de como podriamos
+ * generar un documento tecnico en la que 
+ * explique nuestro codigo.
+ * 
+ * @author Creador: Oscar Andrade
+ * @since Creado: 19 de september del 2025
+ * @version 0.0
+ * 
+ * @author Actualizado: Marlon Martinez
+ * @since Actualizado 20/sept/26
+ * @version 0.1
+*/
 
 public class JAVADOCS {
 
 
 
-
+    /**
+     * Es un metodo la cual esta desarrollado para
+     * mostrar un mensaje personalizado de bienvenida
+    */
     public void mostrarBienvenida() {
         System.out.println("Bienvenido a la Calculadora Utils!");
     }
-
+    /**
+     * Funcion de Suma, que necesita dos parametros para 
+     * poder realizar la suma correspondiente y devolver el valor.
+     * 
+     * @param a Variable del tipo Entero
+     * @param b 2da Variable del tipo Entero
+     * @return resultadoTemporal Variable que almacena la suma de los enteros.
+    */
     public int sumar(int a, int b) {
         int resultadoTemporal;
         
@@ -23,7 +46,19 @@ public class JAVADOCS {
         return resultadoTemporal;
     }
 
-
+     /**
+     * Funcion que permite dividir dos numeros entre si, siempre que
+     * el denominador o divisor no sea Cero.
+     * 
+     * @param numerador Variable del tipo Entero.
+     * @param denominador Variable del tipo Entero.
+     * @return resultado Es la division entre numerador y el denominador.
+     * 
+     * @throws ArithmeticException se tiene una bandera de excepcion 
+     *  de error arimetico al cuando el denominador es cero.
+     * 
+     * 
+    */
     public double dividir(int numerador, int denominador) throws ArithmeticException {
         double resultado = 0;
         if (denominador == 0) {
