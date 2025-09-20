@@ -5,7 +5,7 @@
 package javadocs;
 
 /**
- *
+ * 
  * @author Oscar Andrade
  */
 public class JAVADOCS {
