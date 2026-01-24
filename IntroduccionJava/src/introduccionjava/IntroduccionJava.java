@@ -109,8 +109,6 @@ public class IntroduccionJava {
         System.out.printf("Total de Manzanas es: %d\n",totalManzanas+3);
         
         
-        
-        
         System.out.println("");
         
         
