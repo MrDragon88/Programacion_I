@@ -35,6 +35,9 @@ public class AsignaturaProgramacion {
         int notaExamen = 0;
         int notaAcum = 0;
         
+        int notaFinal = 0;
+        final int NOTAAPROBACION = 65;
+        
         int cicloParcial = 1;
         
         while(cicloParcial <=2){
@@ -98,8 +101,21 @@ public class AsignaturaProgramacion {
             cicloParcial++;//Modificador
         }//Fin de While
         
+        
+        notaFinal = parcialI + parcialII;
+        
         System.out.printf("\nNota Parcial I: %d",parcialI);
         System.out.printf("\nNota Parcial II: %d",parcialII);
+        
+        System.out.printf("\nNota Final: %d",notaFinal);
+        
+        if(notaFinal >= NOTAAPROBACION){
+            System.out.println("Asignatura Aprobada");
+        }
+        else
+        {
+            System.out.println("Estudie papa...estudie!!!!");
+        }
         System.out.println("");
     }//Fin de Main
     
