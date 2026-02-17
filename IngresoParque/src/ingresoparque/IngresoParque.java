@@ -50,6 +50,10 @@ public class IngresoParque {
         int edad = 0;
         char genero = '@';
         char tutor = '#';
+        int numMujeres =0;
+        int numVarones =0;
+        int numJoven = 0;
+        int numAdulto = 0;
  
         //for(int i = 1 ; i<CAPACIDADMAX ; i++){
         while(personas <=30){
@@ -76,6 +80,8 @@ public class IngresoParque {
                 }
             }while(genero !='M' && genero != 'V');
             
+      
+            
             //Validando los Datos ingresados
             System.out.println("\n***********");
             System.out.printf("Edad: %d",edad);
@@ -83,9 +89,18 @@ public class IngresoParque {
             System.out.println("\n*************");
             //******************************************
             
+            if(genero == 'M'){
+                numMujeres++;
+            }
+            else
+            {
+                numVarones++;
+            }
+            
             if(edad>= 18){
                 System.out.println("Tienes Mas de 18");
                 System.out.println("Puedes ingresar solo!!!");
+                numAdulto++;
             }
             else if(edad>=15){
                 System.out.println("Andas acompaniado (S/N)?");
@@ -94,6 +109,7 @@ public class IngresoParque {
                     System.out.println("Si puedes ingresar");
                     System.out.println("pero siempre tienes que");
                     System.out.println("estar con tu companiero");
+                    numJoven++;
                 }
                 else{
                     System.out.println("Solo puedes ingresar");
@@ -105,6 +121,12 @@ public class IngresoParque {
             }
             personas++;
         }//Fin del While
+        
+        System.out.println("Total de Personas");
+        System.out.printf("Varones: %d\n",numVarones);
+        System.out.printf("Mujeres: %d\n",numMujeres);
+        System.out.printf("Adultos: %d\n",numAdulto);
+        System.out.printf("Jovenes: %d\n",numJoven);
     }//Fin de Main
     
 }//Fin Class
