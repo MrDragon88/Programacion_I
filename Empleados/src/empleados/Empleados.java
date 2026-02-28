@@ -11,6 +11,13 @@ import java.util.Scanner;
  * @author oscar
  */
 public class Empleados {
+    /*
+        Estructura de una Funcion
+    1. Tipo de Acceso -: public, private, protected
+    2. Tipo de Retorno -: void, int, string, double etc
+    3. Nombre de la Funcion
+    4. Parametros de la Funcion -: separados por coma, int, double, string, void, etc..
+    */
 
     /**
      * @param args the command line arguments
@@ -38,90 +45,131 @@ public class Empleados {
         double seguro2 = 0;
         double neto2 = 0;
         
-        System.out.println("--- DATOS DEL EMPLEADO 1 ---");
-        System.out.print("Nombre: ");
-        nombre1 = scanner.nextLine();
+        System.out.println("Empleado 1");
+        nombre1 = IngreseNombre();        
+        
+        salario1 = ValidacionNumerica("Dime cuanto ganas:");
+        antiguedad1 = (int)ValidacionNumerica("Dime hace cuanto trabajas: ");
         
         
-        do{
-            System.out.print("Salario base: ");
-            salario1 = scanner.nextDouble();
-            
-            if(salario1 <0){
-                System.out.println("No puede ser un valor negativo");
-                System.out.println("Ingrese nuevamente el valor");
-            }
-        }while(salario1<0);
-        
-        do{
-         System.out.print("Años de antigüedad: ");
-         antiguedad1 = scanner.nextInt();
-         if(antiguedad1 <0){
-             System.out.println("No puede ser un valor negativo");
-             System.out.println("Ingrese nuevamente el valor");
-         }
-        }while(antiguedad1<0);
-         scanner.nextLine(); // Limpiar el buffer
+        // scanner.nextLine(); // Limpiar el buffer
 
         // Cálculos Empleado 1
-        bono1 = salario1 * 0.05 * antiguedad1;
+        bono1 = CalculoBono(salario1, antiguedad1);//Llamado de la Funcion
         salarioTotal1 = salario1 + bono1;
-        
-        if(salarioTotal1 < 15000){
-            seguro1 = 1000;
-        }else if(salarioTotal1 <20000){
-            seguro1 = salarioTotal1 * 0.05;
-        }else if(salarioTotal1 <25000){
-            seguro1 = salarioTotal1 * 0.08;
-        }else{
-            seguro1 = 2500;
-        }
-            
-        
+        seguro1 = CalculoSeguro(salarioTotal1);
         
         neto1 = salarioTotal1 - seguro1;
 
         // Recibo Empleado 1
-        System.out.println("\n--- RECIBO DE " + nombre1.toUpperCase() + " ---");
-        System.out.println("Salario Base: $" + salario1);
-        System.out.println("Bono Antigüedad: +$" + bono1);
-        System.out.println("Seguro Médico: -$" + seguro1);
-        System.out.println("SALARIO NETO: $" + neto1);
-
-       
-
-        System.out.println("\n--- DATOS DEL EMPLEADO 2 ---");
-        System.out.print("Nombre: ");
+        MostrarResumenEmpleado(nombre1, salario1, bono1, seguro1, neto1);
+        
+        System.out.println("\n-----------------\n");
+        
+        System.out.println("Empleado 2");
         nombre2 = scanner.nextLine();
-        System.out.print("Salario base: ");
-        salario2 = scanner.nextDouble();
-        System.out.print("Años de antigüedad: ");
-        antiguedad2 = scanner.nextInt();
+        
+        salario2 = ValidacionNumerica("Dime cuanto ganas: ");
+        
+        antiguedad2 = (int)ValidacionNumerica("Hace cuanto est[as laborando: ");
 
         // Cálculos Empleado 2
-        bono2 = salario2 * 0.05 * antiguedad2;
+        bono2 = CalculoBono(salario2, antiguedad2);
         salarioTotal2 = salario2 + bono2;
-        
-        if(salarioTotal2 < 15000){
-            seguro2 = 1000;
-        }else if(salarioTotal2 <20000){
-            seguro2 = salarioTotal2 * 0.05;
-        }else if(salarioTotal2 <25000){
-            seguro2 = salarioTotal2 * 0.08;
-        }else{
-            seguro2 = 2500;
-        }
-    
+        seguro2 = CalculoSeguro(salarioTotal2);
         neto2 = salarioTotal2 - seguro2;
 
-        // Recibo Empleado 2 
-        System.out.println("\n--- RECIBO DE " + nombre2.toUpperCase() + " ---");
-        System.out.println("Salario Base: $" + salario2);
-        System.out.println("Bono Antigüedad: +$" + bono2);
-        System.out.println("Seguro Médico: -$" + seguro2);
-        System.out.println("SALARIO NETO: $" + neto2);
+        MostrarResumenEmpleado(nombre2, salario2, bono2, seguro2, salario2);
 
        
     }
-}
+    
+    /**
+        Funcion para ingresar el nombre
+    */
+    public static String IngreseNombre(){
+        Scanner scan = new Scanner(System.in);
+        String nombreTemp = "HOLA";
+        
+        System.out.println("--- DATOS DEL DOCENTE ---");
+        System.out.print("Nombre de la Persona: ");
+        nombreTemp= scan.nextLine();
+        
+        return nombreTemp;
+    }//Fin de Funcion IngreseNombre
+
+    /**
+     * Funcion que permite validar que el salario sea positivo
+    */
+    public static double ValidacionSalario(){
+        Scanner scan = new Scanner(System.in);
+        double salarioTEMP = 0.0;
+        do{
+            System.out.print("Dime tu salario base: ");
+            salarioTEMP = scan.nextDouble();
+        
+            if(salarioTEMP <0){
+                System.out.println("No puede ser un valor negativo");
+                System.out.println("Ingrese nuevamente el valor");
+            }
+        }while(salarioTEMP <0);
+        return salarioTEMP;
+    }//Fin de Funcion Validacion Salario
+
+    public static double ValidacionNumerica(String mensaje){
+        Scanner scan = new Scanner(System.in);
+        double numeroTEMP = 0.0;
+        do{
+            System.out.print(mensaje);
+            numeroTEMP = scan.nextDouble();
+        
+            if(numeroTEMP <0){
+                System.out.println("No puede ser un valor negativo");
+                System.out.println("Ingrese nuevamente el valor");
+            }
+        }while(numeroTEMP <0);
+        return numeroTEMP; 
+    }//Fin de Validacion Numerica
+
+    public static double CalculoBono(double sueldo, int tiempoTrabajo){
+        double calculoTEMP = 0.0;
+        
+            if(sueldo>1000){
+                calculoTEMP = sueldo * 0.05 * tiempoTrabajo;
+            }
+            else
+            {
+                calculoTEMP = 2000;
+            }
+        return calculoTEMP;
+    }//Fin de Calculo Bono
+
+    public static double CalculoSeguro(double salarioTotal){
+        double seguroTEMP = 0;
+        
+        if(salarioTotal < 15000){
+            seguroTEMP = 1000;
+        }else if(salarioTotal <20000){
+            seguroTEMP = salarioTotal * 0.05;
+        }else if(salarioTotal <25000){
+            seguroTEMP = salarioTotal * 0.08;
+        }else{
+            seguroTEMP = 2500;
+        }
+        return seguroTEMP;
+    }//Fin de Funcion Calculo Seguro
+
+    public static void MostrarResumenEmpleado(String nom, double sala, double bono, 
+            double seguro, double salaNeto){
+        System.out.printf("\n--- RECIBO DE %s ---\n",nom.toUpperCase());
+        System.out.printf("Salario Base: $%.2f\n", sala);
+        System.out.printf("Bono Antiguedad: $%.2f\n", bono);
+        System.out.printf("Seguro Medico: -$%.2f\n", seguro);
+        System.out.printf("SALARIO NETO: $%.2f\n", salaNeto);
+
+    }//Fin de Resumen
+
+
+
+}//Fin de Class
 
